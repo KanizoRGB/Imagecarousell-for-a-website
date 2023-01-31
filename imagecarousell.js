@@ -1,6 +1,3 @@
-var slidePosition = 1;
-SlideShow(slidePosition);
-
 // forward/Back controls
 function plusSlides(n) {
   SlideShow(slidePosition += n);
@@ -26,8 +23,8 @@ function SlideShow(n) {
   slides[slidePosition-1].style.display = "block";
   circles[slidePosition-1].className += " enable";
 } 
-var slidePosition = 0;
-SlideShow();
+
+
 
 function SlideShow() {
   var i;
@@ -40,3 +37,11 @@ function SlideShow() {
   slides[slidePosition-1].style.display = "block";
   setTimeout(SlideShow, 2000); // Change image every 2 seconds
 } 
+
+window.addEventListener('load', function() {
+  SlideShow();
+});
+
+var slidePosition = 0;
+
+SlideShow();
